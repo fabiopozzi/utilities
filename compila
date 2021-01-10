@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+"""
+build and change filename.
+"""
+import sys
+import os
+import subprocess
+
+usage_string = "compila <file>"
+
+
+def main():
+    """ main function """
+    if len(sys.argv) != 2:
+        print(usage_string)
+        sys.exit(-1)
+
+    source_path = os.path.split(sys.argv[1])
+    name, _ = source_path[1].split(".")
+
+    subprocess.run(["gcc", sys.argv[1], "-o", name])
+
+
+if __name__ == '__main__':
+    main()
