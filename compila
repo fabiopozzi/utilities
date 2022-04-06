@@ -18,7 +18,7 @@ def main():
     source_path = os.path.split(sys.argv[1])
     name, _ = source_path[1].split(".")
 
-    subprocess.run(["gcc", sys.argv[1], "-o", name])
+    subprocess.run(["gcc", "-g", sys.argv[1], "-o", name])
 
 
 if __name__ == '__main__':
